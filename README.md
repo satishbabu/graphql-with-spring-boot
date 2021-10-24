@@ -63,3 +63,24 @@ query{
 }
 ```
 
+### Query with filter condition 
+The filter can be on the edge between student and subject (subselect of student)
+
+```
+query{
+  Student(id: 101){
+    id
+    firstName
+    lastName
+    email
+    street
+    city
+    fullName
+    learningSubjects(subjectNameFilter: Java) {
+      id
+      subjectName
+      marksObtained
+    } 
+  }
+}
+```
